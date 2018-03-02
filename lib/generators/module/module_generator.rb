@@ -37,6 +37,14 @@ class ModuleGenerator < Rails::Generators::NamedBase
     empty_directory "#{module_path}/lib"
     empty_directory "#{module_path}/lib/menus"
 
+
+    copy_file 'init_.rb', "#{module_path}/initializers/init_#{module_name}.rb" # 启用各模块必须的文件
+    copy_file 'routes.rb', "#{module_path}/config/routes.rb" # 路由文件
+    copy_file 'en.yml', "#{module_path}/config/locales/en.yml" # en多语言文件
+    copy_file 'zh.yml', "#{module_path}/config/locales/zh.yml" # zh多语言文件
+    copy_file 'init_data.rb', "#{module_path}/lib/menus/init_data.rb" # 配置文件，比如：菜单、功能、权限(action)等
+
+
   end
 
 
