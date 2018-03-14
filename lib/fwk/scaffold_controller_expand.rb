@@ -3,6 +3,9 @@ module Fwk
     def self.included(base)
       base.class_eval do
 
+        source_root File.expand_path('../../templates', __FILE__)
+
+
         # 移除helper的创建
         remove_hook_for :helper
 

@@ -51,7 +51,7 @@ module Rabbit
       g.template_engine :erb
       g.test_framework  nil # 禁止自动生成单元测试文件
       g.system_tests  nil # 禁止生自动成单元测试文件
-      g.resource_route  false # 禁止自动生成路由
+      # g.resource_route  false # 禁止自动生成路由
       g.helper  false # 禁止自动生成helper
       g.assets     false # 禁止自动生成assets
     end

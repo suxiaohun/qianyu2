@@ -1,4 +1,6 @@
 require_relative 'generator_expand'
+require_relative 'route_expand'
+require_relative 'route_action_expand'
 require_relative 'scaffold_expand'
 require_relative 'scaffold_controller_expand'
 
@@ -18,6 +20,14 @@ module Fwk
 
       # 扩展generator基础模块
       Rails::Generators::NamedBase.send(:include, Fwk::GeneratorExpand)
+
+      # 1.扩展rails generate scaffold=>routes
+      require 'rails/generators/rails/resource_route/resource_route_generator'
+      Rails::Generators::ResourceRouteGenerator.send(:include,Fwk::RouteExpand)
+      require 'rails/generators/actions'
+      Rails::Generators::Actions.send(:include,Fwk::RouteActionExpand)
+
+
 
       # 扩展rails generate scaffold=>views
       require 'rails/generators/erb/scaffold/scaffold_generator'

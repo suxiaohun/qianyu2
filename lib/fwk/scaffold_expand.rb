@@ -3,6 +3,9 @@ module Fwk
     def self.included(base)
       base.class_eval do
 
+        source_root File.expand_path('../../templates/views', __FILE__)
+
+
         # 扩展生成视图的文件夹
         def create_root_folder
           empty_directory File.join("#{get_module}app/views", controller_file_path)
@@ -21,7 +24,7 @@ module Fwk
         private
 
         def available_views
-          %w(index edit )
+          %w(index edit new show _form)
         end
       end
     end
