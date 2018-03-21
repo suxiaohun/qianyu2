@@ -12,10 +12,6 @@ require_relative 'migration_expand'
 module Fwk
   class Railtie < Rails::Railtie
 
-
-
-
-    #todo 自定义后，不会再从lib/templates下寻找模板了，而是启用默认的，需要解决下
     generators do
 
       # 扩展generator基础模块
@@ -23,10 +19,9 @@ module Fwk
 
       # 1.扩展rails generate scaffold=>routes
       require 'rails/generators/rails/resource_route/resource_route_generator'
-      Rails::Generators::ResourceRouteGenerator.send(:include,Fwk::RouteExpand)
+      Rails::Generators::ResourceRouteGenerator.send(:include, Fwk::RouteExpand)
       require 'rails/generators/actions'
-      Rails::Generators::Actions.send(:include,Fwk::RouteActionExpand)
-
+      Rails::Generators::Actions.send(:include, Fwk::RouteActionExpand)
 
 
       # 扩展rails generate scaffold=>views
@@ -45,7 +40,7 @@ module Fwk
 
       # 1.扩展rails generate controller=>controller
       require 'rails/generators/rails/controller/controller_generator'
-      Rails::Generators::ControllerGenerator.send(:include,Fwk::ControllerExpand)
+      Rails::Generators::ControllerGenerator.send(:include, Fwk::ControllerExpand)
       # 2.扩展rails generate controller=>views
       require 'rails/generators/erb/controller/controller_generator'
       Erb::Generators::ControllerGenerator.send(:include, Fwk::ErbControllerExpand)
@@ -56,7 +51,5 @@ module Fwk
 
 
     end
-
-
   end
 end

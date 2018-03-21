@@ -5,3 +5,14 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+#
+Sys::User.create(:login_name => 'suxiaohun',:name=>'小苏',:mobile=>'18888888888', :password => Sys::User.encrypt_password('111111'))
+
+
+
+
+
+
+

@@ -2,6 +2,8 @@ module Fwk
   module ErbControllerExpand
     def self.included(base)
       base.class_eval do
+        source_root File.expand_path('../../templates/views', __FILE__)
+
 
         def copy_view_files
           base_path = File.join("#{get_module}app/views", class_path, file_name)
