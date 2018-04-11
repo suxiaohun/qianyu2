@@ -1,0 +1,67 @@
+html, body {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+
+}
+
+.container-header {
+    height: 90px;
+    width: 100%;
+    /*background: #383a4c;*/
+    background: url("bg_logo1.png") no-repeat  #383a4c;
+    /*background-size: 200px 90px;*/
+}
+
+.container-body {
+    width: 100%;
+    overflow: auto;
+    background: greenyellow;
+    border-bottom: 2px solid white;
+    border-top: 2px solid white;
+}
+
+.container-footer {
+    height: 21px;
+    width: 100%;
+    background: #383a4c;
+    text-align: center;
+    color: white;
+}
+
+.container-nav {
+    width: 220px;
+    min-height: 300px;
+    background: #383a4c;
+    float: left;
+}
+
+.container-yield {
+    padding: 10px 10px;
+    overflow: hidden;
+    min-height: 300px;
+    background: purple;
+}
+
+.header-right-div {
+    width: 330px;
+    height: 100%;
+    float: right;
+    text-align: center;
+}
+
+.header-right-div > span {
+    line-height: 90px;
+    color: white;
+    font-weight: bold;
+}
+
+.header-right-div > span > a:hover, .header-right-div > span > a:visited, .header-right-div > span > a:link, .header-right-div > span > a:active {
+    color: white;
+}

@@ -40,7 +40,7 @@ module Rabbit
 
     # 根据编码顺序加载自定义模块文件
 
-    module_arr = {:fwk => '01_frame_fwk', :sys => '10_system_sys'}
+    module_arr = {:fwk => '01_frame_fwk', :sys => '10_system_sys',:assets=>'20_assets'}
     module_arr.each do |k, v|
 
       config.paths.keys.each do |key|

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rabbit</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag 'application' %>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="container-header">
+    <div class="header-right-div">
+      <span>欢迎您：&nbsp;<%= Sys::User.current.name %>&nbsp;&nbsp; <%= link_to '退出', logout_path %></span>
+    </div>
+  </div>
+  <div class="container-body">
+    <div class="container-nav">
+      2
+    </div>
+    <div class="container-yield">
+      <%= yield %>
+    </div>
+  </div>
+  <div class="container-footer">
+    Copyright ©XiaoSu
+  </div>
+
+</div>
+
+</body>
+</html>
+<script type="text/javascript">
+    var ccHeight = getHeight() - 115 + "px";
+    $(function () {
+        $(".container-body").css({
+            "min-height": ccHeight
+        });
+    });
+
+    $(window).resize(function () {
+        ccHeight = getHeight() - 115 + "px";
+        $(".container-body").css({
+            "min-height": ccHeight
+        })
+    });
+
+
+    //tools
+    function getHeight() {
+        return document.documentElement.clientHeight;
+    }
+
+</script>

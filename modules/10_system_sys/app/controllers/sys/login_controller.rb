@@ -2,14 +2,11 @@ class Sys::LoginController < ApplicationController
 
   skip_before_action :check_if_require_login, :only => [:login, :logout]
 
+  layout 'login'
 
   def login
     if request.get?
-      Sys::Session.clear_expired_sessions('30 minutes')
-
-      Sys::User.current = nil
-      #重置session,#注销用户
-      reset_session
+      logout_auth
     else
       login_authentication
     end
@@ -18,10 +15,24 @@ class Sys::LoginController < ApplicationController
   end
 
   def logout
+    logout_auth
+
+    render 'login'
   end
 
 
   private
+
+  # 退出系统通用方法
+  def logout_auth
+    Sys::Session.clear_expired_sessions('30 minutes')
+
+    Sys::User.current = nil
+    #重置session,#注销用户
+    reset_session
+  end
+
+
   # 验证用户登录是否成功
   # 成功,则转向用户的默认页面
   # 失败,返回登录页面,并显示登录出错的消息
