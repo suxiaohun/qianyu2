@@ -4,14 +4,6 @@ class Sys::VisitorsController < ApplicationController
   layout 'blank'
 
 
-  def index
-  end
-
-  def color
-
-    @a = 1
-
-  end
 
 
 end

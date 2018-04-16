@@ -15,7 +15,9 @@ html, body {
     height: 90px;
     width: 100%;
     /*background: #383a4c;*/
-    background: url("bg_logo1.png") no-repeat  #383a4c;
+    //background: image_path("bg_logo1.png") no-repeat  #383a4c;
+    //todo image_path 会报错，有时间需要查一下原因
+    background: image_url("bg_logo1.png") no-repeat  #383a4c;
     /*background-size: 200px 90px;*/
 }
 

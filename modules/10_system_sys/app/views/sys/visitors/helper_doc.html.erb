@@ -1,0 +1,26 @@
+<h2>一、首先了解一下Helper方法：</h2>
+
+<ol>
+  <li>helper方法就是方法</li>
+  <li>它大部分在view中应用，也可以做为普通方法使用在其它场景中</li>
+  <li>它可以写在controller中，也可以写在app/helper模块中</li>
+  <li>Rails框架提供了一些Helper方法，如：form_for、link_to等等</li>
+  <li>通过合理的将一些功能应用封闭成Helper方法，可以很大程度上简化代码量和维护成本，并且能完成一些统一性和风格方面的要求。</li>
+</ol>
+
+
+<h2>二、Helper方法的定义</h2>
+
+<h3>1. 写在controller中的场景</h3>
+写在控制器中的Helper方法，或者打算将控制器中的某个方法开放成Helper方法，以便在视图中使用时，必须使用“helper_method :xxx”写声明；如下面示例：
+<div class="cnblogs_code"><div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"> </span></div>
+  <pre> <span style="color: #0000ff;">class</span> UsersController &lt;<span style="color: #000000;"> ApplicationController
+   helper_method :date_fmt
+
+   </span><span style="color: #0000ff;">def</span><span style="color: #000000;"> date_fmt date
+     </span><span style="color: #0000ff;">return</span> date.strftime(<span style="color: #800000;">"</span><span style="color: #800000;">%Y-%m-%d</span><span style="color: #800000;">"</span><span style="color: #000000;">)
+   end
+ end</span></pre>
+  <div class="cnblogs_code_toolbar"><span class="cnblogs_code_copy"> </span></div></div>
+
+
